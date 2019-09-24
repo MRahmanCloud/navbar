@@ -1,0 +1,245 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
+}
+.container{
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.header{
+    background-color: #000000;
+    color: #ffffff;
+}
+
+header{
+    display: grid;
+    grid-template-columns: 30% 0% 70%;
+    padding: 1.2em 0;
+}
+
+.logo a{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+    display: block;
+    padding: 0.7em 0;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+}
+.navbar nav ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar nav ul li{
+    list-style-type: none;
+}
+.navbar nav ul li a{
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    padding: 0.5em;
+    border: 1px solid #ffffff;
+    margin: 2px;
+    border-radius: 4px;
+    transition: 0.5s;
+}
+.navbar nav ul li a:hover{
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    transition: 0.9s;
+}
+
+/* .............Service section............... */
+.content h2{
+    text-align: center;
+    padding: 3em 0;
+}
+.content-wrapper{
+    display: grid;
+    grid-column-gap: 0.8em;
+}
+.content-wrapper figure{
+    margin-bottom: 1em;
+}
+.content-wrapper figure img{
+    width: 100%;
+}
+
+/* ..........Media queries............ */
+@media (max-width: 575px) {
+    body{
+        overflow-x: hidden;
+    }
+    .container{
+        padding: 0 1em;
+    }
+    header{
+        display: flex;
+        justify-content: space-between;
+    }
+    .navbar{
+        position: absolute;
+        right: 0;
+        top: 5em;
+        background-color: #000000;
+        width: 70%;
+        padding: 2em 2em;
+        display: none;
+        /* transform: translateX(100%);
+        transition: transform 0.5s ease-in; */
+    }
+    .navbar ul{
+        flex-direction: column;
+    }
+    .nav-active{
+        display: flex;
+        flex-direction: column;
+    }
+    .burger{
+        margin-top: 0.6em;
+        cursor: pointer;
+    }
+    .burger div{
+        width: 25px;
+        height: 3px;
+        background-color: #ffffff;
+        margin: 5px;
+        transition: all 0.3s ease;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+
+    .container {
+        max-width: 540px;
+    }
+    header{
+        display: flex;
+        justify-content: space-between;
+    }
+    .navbar{
+        position: absolute;
+        right: 0;
+        top: 5em;
+        background-color: #000000;
+        width: 70%;
+        padding: 2em 2em;
+        display: none;
+        /* transform: translateX(100%);
+        transition: transform 0.5s ease-in; */
+    }
+    .navbar ul{
+        flex-direction: column;
+    }
+    .nav-active{
+        display: flex;
+        flex-direction: column;
+    }
+    .burger{
+        margin-top: 0.6em;
+        cursor: pointer;
+    }
+    .burger div{
+        width: 25px;
+        height: 3px;
+        background-color: #ffffff;
+        margin: 5px;
+        transition: all 0.3s ease;
+      }
+    .content-wrapper{
+        grid-template-columns: auto auto;
+    }
+
+  }
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+      max-width: 720px;
+    }
+
+    header{
+        grid-template-columns: 20% 0% 80%;
+    }
+    .navbar{
+        padding-top: 0.5em; 
+    }
+    .navbar nav:first-child ul li:first-child{
+        display: none;
+    }
+    .navbar nav ul li a{
+        display: block;
+    }
+    .burger div{
+        display: none;
+    }
+
+    .content-wrapper{
+        grid-template-columns: auto auto auto;
+    }
+
+  }
+
+@media (min-width: 992px) {
+    .container{
+        max-width: 960px;
+    }
+    .navbar{
+        padding-top: 0.5em; 
+    }
+    .content-wrapper{
+        grid-template-columns: auto auto auto auto;
+    }
+    .burger div{
+        display: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1140px;
+    }
+    .navbar{
+        padding-top: 0.5em; 
+    }
+    .content-wrapper{
+        grid-template-columns: auto auto auto auto;
+    }
+    .burger div{
+        display: none;
+    }
+}
+
+/* ........animation...... */
+@keyframes navLinkFade{
+
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+/* .....csutom style....... */
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
