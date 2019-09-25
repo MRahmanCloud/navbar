@@ -1,4 +1,19 @@
 //alert('Masum');
+window.addEventListener('scroll',()=> {
+    //alert('scrolled');
+    sticyNav();
+});
+
+const sticyNav = ()=> {
+    const header = document.querySelector('.header');
+    if(window.pageYOffset > 250) {
+        header.classList.add('sticy');
+        //header.style.animation = 'fade 1s ease-in';
+    } else{
+        header.classList.remove('sticy'); 
+    }
+};
+
 const navSlide = ()=> {
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.navbar');
@@ -8,8 +23,8 @@ const navSlide = ()=> {
         nav.classList.toggle('nav-active');
 
         navLinks.forEach((link, index)=> {
-            //link.style.animation = `navLinkFade 2s ease forwards ${index / 7+2}`;
-             link.style.animation = `navLinkFade 1s ease-in`;
+            //link.style.animation = `fade 1s ease forwards ${index / 7+2}`;
+             link.style.animation = 'fade 1s ease-in';
         });
 
         burger.classList.toggle('toggle');

@@ -221,7 +221,7 @@ header{
 }
 
 /* ........animation...... */
-@keyframes navLinkFade{
+@keyframes fade{
 
     from{
         opacity: 0;
@@ -233,6 +233,13 @@ header{
 }
 
 /* .....csutom style....... */
+
+.sticy{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    animation: fade 0.5s ease-in;
+}
 
 .toggle .line1{
     transform: rotate(-45deg) translate(-5px,6px);
